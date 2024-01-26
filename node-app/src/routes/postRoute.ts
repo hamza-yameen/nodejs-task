@@ -5,7 +5,7 @@ import { authentication } from "../middleware/authentication/checkAuth";
 
 const router: Router = express.Router();
 
-router.get("/", [authentication], postController.getAllPosts);
+router.get("/", postController.getAllPosts);
 router.post(
 	"/create",
 	[authentication],
@@ -13,7 +13,7 @@ router.post(
 	postController.createPost
 );
 router.get("/:id", postController.getPostById);
-router.delete("/:id", postController.deletePost);
+router.delete("/:id", [authentication], postController.deletePost);
 router.patch("/:id", postController.updatePost);
 
 module.exports = router;

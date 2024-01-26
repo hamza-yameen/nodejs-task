@@ -58,7 +58,7 @@ const getPostById = async (req: Request, res: Response, next: NextFunction) => {
 		},
 	});
 	if (!getPost) {
-		return next(new NotFoundException(ResponseMessages.POST_NO_ROUTE_FOUND));
+		return next(new NotFoundException(ResponseMessages.POST_NO_FOUND));
 	}
 
 	return res.status(200).json(apiResponseHandler(200, { post: getPost }));
@@ -73,7 +73,7 @@ const deletePost = async (req: Request, res: Response, next: NextFunction) => {
 		},
 	});
 	if (!getPost) {
-		return next(new NotFoundException(ResponseMessages.POST_NO_ROUTE_FOUND));
+		return next(new NotFoundException(ResponseMessages.POST_NO_FOUND));
 	}
 
 	try {
@@ -100,7 +100,7 @@ const updatePost = async (req: Request, res: Response, next: NextFunction) => {
 		},
 	});
 	if (!getPost) {
-		return next(new NotFoundException(ResponseMessages.POST_NO_ROUTE_FOUND));
+		return next(new NotFoundException(ResponseMessages.POST_NO_FOUND));
 	}
 
 	const { title, description } = req.body;
