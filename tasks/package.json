@@ -1,0 +1,17 @@
+{
+	"name": "ikonoe-file-system",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"errorHandling": "node src/errorHandling.js",
+		"fileSystemOperations": "node src/fileSystemOperations.js",
+		"asynchronousOperations": "node src/asynchronousOperations.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^1.6.7"
+	}
+}
